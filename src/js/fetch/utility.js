@@ -1,43 +1,80 @@
-// utility functions to fetch data for the page
-async function convertToJson(res) {
-    const jsonResponse = await res.json(); // Parse response body as JSON
-    if (res.ok) {
-        return jsonResponse;
-    } else {
-        throw { name: "servicesError", message: jsonResponse };
+// wrapper for querySelector...returns matching element
+export function qs(selector, parent = document) {
+    return parent.querySelector(selector);
+}
+// or a more concise version if you are into that sort of thing:
+// export const qs = (selector, parent = document) => parent.querySelector(selector);
+
+// retrieve data from local storage
+export function getLocalStorage(key) {
+    return JSON.parse(localStorage.getItem(key));
+}
+// save data to local storage
+export function setLocalStorage(key, data) {
+    localStorage.setItem(key, JSON.stringify(data));
+    
+}
+// setLocalStorage();
+// set a listener for both touchend and click
+export function setClick(selector, callback) {
+    qs(selector).addEventListener("touchend", (event) => {
+        event.preventDefault();
+        callback();
+    });
+    qs(selector).addEventListener("click", callback);
+}
+// gets parameters from a url
+export function getParam(param) {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const product = urlParams.get(param); //what is 'product' in relation to the url
+    return product;
+}
+//render multiple html templates to the DOM
+export function renderListWithTemplate(
+    templateFunc,
+    parentElement,
+    items,
+    position = "afterbegin",
+    clear = false
+) {
+    const htmlStrings = items.map(templateFunc);
+    // if clear is true we need to clear out the contents of the parent.
+    if (clear) {
+        parentElement.innerHTML = "";
+    }
+    parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
+}
+
+export function renderWithTemplate(
+    template,
+    parentElement,
+    data,
+    position = "afterbegin",
+    callback
+) {
+    parentElement.insertAdjacentHTML(position, template);
+    if (callback) {
+        callback(data);
     }
 }
 
-export default class ExternalServices {
-    constructor() {
-        this.base_URL = "https://spruce-moose-backend.onrender.com";
+export async function loadTemplate(path) {
+    const res = await fetch(path);
+    return await res.text();
+}
+
+export async function loadHeaderFooter() {
+    //if local storage is empty it will cause an error with header and footer unless initialized.
+    if (getLocalStorage("cart") == null) {
+        setLocalStorage("cart", []);
     }
-    async getData(category) {
-        const response = await fetch(
-            `${this.base_URL}/plant/${category}`
-        );
-        const data = await convertToJson(response);
-        return data.Result;
-    }
-    async findProductById(id) {
-        const response = await fetch(`${this.base_URL}product/${id}`);
-        const data = await convertToJson(response);
-        // console.log(data.Result);
-        return data.Result;
-    }
-    async checkout(form) {
-        // build the data object from the calculated fields, the items in the cart, and the information entered into the form
-        const options = {
-            method: "POST",
-            headers: {
-                "content-Type": "application/json",
-            },
-            body: JSON.stringify(form),
-        };
-        // console.log(this.base_URL + "checkout/", options);
-        return await fetch(this.base_URL + "checkout/", options).then(
-            convertToJson
-        );
-        // call the checkout method in our ExternalServices module and send it our data object.
-    }
+    let headerTemplate = await loadTemplate("../../views/partials/header.html");
+    headerTemplate = headerTemplate.replace(`cartCount">0`, `cartCount">${getLocalStorage("cart").length}`);
+    const headerElement = document.getElementById("main-header");
+    const footerTemplate = await loadTemplate("../../views/partials/footer.html");
+    const footerElement = document.getElementById("main-footer");
+
+    renderWithTemplate(headerTemplate, headerElement);
+    renderWithTemplate(footerTemplate, footerElement);
 }
