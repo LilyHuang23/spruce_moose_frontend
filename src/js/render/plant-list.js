@@ -1,5 +1,5 @@
 import ExternalServices from "../fetch/ExternalServices.js";
-import ProductList from "../fetch/product_list.js";
+import ProductList from "../fetch/plant_list.js";
 import { loadHeaderFooter, getParam } from "../fetch/utility.js";
 
 loadHeaderFooter();
