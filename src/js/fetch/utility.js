@@ -69,10 +69,10 @@ export async function loadHeaderFooter() {
     if (getLocalStorage("cart") == null) {
         setLocalStorage("cart", []);
     }
-    let headerTemplate = await loadTemplate("../../views/partials/header.html");
+    let headerTemplate = await loadTemplate("/partials/header.html");
     headerTemplate = headerTemplate.replace(`cartCount">0`, `cartCount">${getLocalStorage("cart").length}`);
     const headerElement = document.getElementById("main-header");
-    const footerTemplate = await loadTemplate("../../views/partials/footer.html");
+    const footerTemplate = await loadTemplate("/partials/footer.html");
     const footerElement = document.getElementById("main-footer");
 
     renderWithTemplate(headerTemplate, headerElement);
