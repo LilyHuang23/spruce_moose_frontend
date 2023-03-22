@@ -7,9 +7,10 @@ async function convertToJson(res) {
     }
 }
 
+
 export default class ExternalServices {
     constructor() {
-        this.base_URL = "https://spruce-moose-backend.onrender.com ";
+        this.base_URL = "https://spruce-moose-backend.onrender.com";
     }
     async getData(category) {
         const response = await fetch(
@@ -18,7 +19,7 @@ export default class ExternalServices {
         const data = await convertToJson(response);
         return data.Result;
     }
-    async findProductById(id) {
+    async findPlantById(id) {
         const response = await fetch(`${this.base_URL}/plant/${id}`);
         const data = await convertToJson(response);
         // console.log(data.Result);
@@ -39,6 +40,8 @@ export default class ExternalServices {
         );
         // call the checkout method in our ExternalServices module and send it our data object.
     }
+
+
     async loginRequest(credentials) {
         const options = {
             method: "POST",

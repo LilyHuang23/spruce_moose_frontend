@@ -1,4 +1,4 @@
-import { Cart } from "./Cart.js";
+import { Cart } from "./Cart";
 
 function plantDetailsTemplate(plant) {
     return `<section class="plant-detail"> <h3>${plant.scientificName}</h3>

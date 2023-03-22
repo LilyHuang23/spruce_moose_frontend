@@ -7,7 +7,10 @@ loadHeaderFooter();
 const category = getParam("category");
 // first create an instance of our ExternalServices class.
 const dataSource = new ExternalServices();
+
 // then get the element we want the product list to render in
-const listElement = ".product-list";
+const listElement = ".plant-list";
 // then create an instance of our ProductList class and send it the correct information.
 const myList = new ProductList(category, listElement, dataSource);
+myList();
+console.log(dataSource);

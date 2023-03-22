@@ -6,27 +6,33 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/main.css">
-    <script type="module" src="../plant_detail.js" defer></script>
-    <body>
-      <header>
-          <img>
-          <h1>Spruce Moose</h1>
-          <nav>
-              <ul>
-                  <li><a href="./pages/plant_list.html">Products</a></li>
-                  <li><a href="./pages/carts.html">Cart</a></li>
-                  <li><a href="#">Account</a></li>
-              </ul>
-          </nav>
-      </header>
-      <main>
-  
-      </main>
-      <footer>
-          <div>&copy; <span></span> | SpruceMoose | <a href="#">Contact Us</a></div>
-      </footer>
-    </body>
-  </html>
-  
+    <link rel="stylesheet" href="../css/main.css">
+    <!-- Lets decide on one source of true for the rendering of home page. -->
+    <script type="module" src="../js/fetch/plant_details.js" defer></script>
+    <script type="module" src="../js/render/main.js" defer></script>
+    <title>Spruce Moose</title>
+  </head>
+  <body>
+    <header class="divider" id="main-header"></header>
+    <main class="divider">
+      <section class="products">
+        <div class="product__container">
+        <h2>Top Products</h2>
+        <ul class="product-list"></ul>
+        </div>
+      </section>
+      <h2 class="plant-category"></h2>
+      <label name="sortBy">Sort By: </label>
+      <select name="sortBy" id="sort_select">
+          <option value="default">Select</option>
+          <option value="price">Price (low to high)</option>
+          <option value="brand">Plant Name (A -> Z)</option>
+      </select>
+  </section>
+<section class="plant-list"></section>
+
+    </main>
+    <footer id="main-footer">
+    </footer>
+  </body>
 </html>
