@@ -1,4 +1,4 @@
-import { getLocalStorage, setLocalStorage } from "./utility.js";
+import { getLocalStorage, setLocalStorage } from "./fetch/utility.js";
 
 export var Cart = {};
 
