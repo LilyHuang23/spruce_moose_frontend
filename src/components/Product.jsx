@@ -20,7 +20,7 @@ export default function Product() {
   useEffect(() => {
     const getProduct = async () => {
       setLoading(true);
-      const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+      const response = await fetch(`spruce-moose-backend.onrender.com/plant/${id}`);
       setProduct(await response.json());
       setLoading(false);
     };
