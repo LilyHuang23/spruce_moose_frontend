@@ -43,8 +43,8 @@ export default function Plants() {
       </>
     );
   };
-  const filterPlant = (cat) => {
-    const updatedList = data.filter((x) => x.category === cat);
+  const filterPlant = (category) => {
+    const updatedList = data.filter((x) => x.category === category);
     setFilter(updatedList);
   };
   const ShowPlants = () => {
@@ -59,27 +59,15 @@ export default function Plants() {
           </button>
           <button
             className="btn btn-outline-dark me-2"
-            onClick={() => filterPlant("men's clothing")}
+            onClick={() => filterPlant("ornamental")}
           >
-            Men
+            Ornamental Plants
           </button>
           <button
             className="btn btn-outline-dark me-2"
-            onClick={() => filterPlant("women's clothing")}
+            onClick={() => filterPlant("fruit")}
           >
-            Women
-          </button>
-          <button
-            className="btn btn-outline-dark me-2"
-            onClick={() => filterPlant("jewelery")}
-          >
-            Jewelery
-          </button>
-          <button
-            className="btn btn-outline-dark me-2"
-            onClick={() => filterPlant("electronics")}
-          >
-            Electronincs
+            Fruit Trees
           </button>
         </div>
         {filter.map((plant) => {
@@ -91,11 +79,11 @@ export default function Plants() {
                     src={plant.image}
                     height="250px"
                     className="card-img-top"
-                    alt={plant.title}
+                    alt={plant.commonName}
                   />
                   <div className="card-body">
                     <h5 className="card-title mb-0">
-                      {plant.title.substring(0, 12)}...
+                      {plant.commonName.substring(0, 12)}...
                     </h5>
                     <p className="card-text lead fw-bold">₹{plant.price}</p>
                     <NavLink
