@@ -20,7 +20,7 @@ export default function Plant() {
   useEffect(() => {
     const getPlant = async () => {
       setLoading(true);
-      const response = await fetch(`spruce-moose-backend.onrender.com/plant/${id}`);
+      const response = await fetch(`spruce-moose-backend.onrender.com/plant/${plant._id}`);
       setPlant(await response.json());
       setLoading(false);
     };
@@ -49,20 +49,25 @@ export default function Plant() {
       <>
         <div className="col-md-6">
           <img
-            src={plant.imageUrl}
-            alt={plant.scientificName}
+            src={plant.imgUrl}
+            alt={plant.commonName}
             height="400px"
             width="400px"
           />
         </div>
         <div className="col-md-6">
-          <h4 className="text-uppercase text-black-50">{plant.category}</h4>
-          <h1 className="display-5">{plant.scientificName}</h1>
+          <h4 className="text-uppercase text-black-50">{plant.scientificName}</h4>
+          <h1 className="display-5">{plant.commonName}</h1>
           <p className="lead fw-bolder">
-            Rating: {plant.rating && plant.rating.rate}
+            Category: {plant.category}
+            Size: {plant.size}
             <i className="fa fa-star"></i>
           </p>
+<<<<<<< Updated upstream
           <h3 className="display-6 fw-bold my-4">$ {plant.price}</h3>
+=======
+          <h3 className="display-6 fw-bold my-4">${plant.price}</h3>
+>>>>>>> Stashed changes
           <p className="lead">{plant.commonName}</p>
           <button
             className="btn btn-outline-dark px-4 py-2"
