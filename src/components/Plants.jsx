@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 
-export default function Products() {
+export default function Plants() {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
   let componentMounted = true;
 
   useEffect(() => {
-    const getProducts = async () => {
+    const getPlants = async () => {
       setLoading(true);
       const response = await fetch("https:spruce-moose-backend.onrender.com/plant");
       console.log(response)
@@ -23,7 +23,7 @@ export default function Products() {
         componentMounted = false;
       };
     };
-    getProducts();
+    getPlants();
   }, []);
 
   const Loading = () => {
@@ -43,11 +43,11 @@ export default function Products() {
       </>
     );
   };
-  const filterProduct = (cat) => {
+  const filterPlant = (cat) => {
     const updatedList = data.filter((x) => x.category === cat);
     setFilter(updatedList);
   };
-  const ShowProducts = () => {
+  const ShowPlants = () => {
     return (
       <>
         <div className="buttons d-flex justify-content-center mb-5 pb-5">
@@ -59,47 +59,47 @@ export default function Products() {
           </button>
           <button
             className="btn btn-outline-dark me-2"
-            onClick={() => filterProduct("men's clothing")}
+            onClick={() => filterPlant("men's clothing")}
           >
             Men
           </button>
           <button
             className="btn btn-outline-dark me-2"
-            onClick={() => filterProduct("women's clothing")}
+            onClick={() => filterPlant("women's clothing")}
           >
             Women
           </button>
           <button
             className="btn btn-outline-dark me-2"
-            onClick={() => filterProduct("jewelery")}
+            onClick={() => filterPlant("jewelery")}
           >
             Jewelery
           </button>
           <button
             className="btn btn-outline-dark me-2"
-            onClick={() => filterProduct("electronics")}
+            onClick={() => filterPlant("electronics")}
           >
             Electronincs
           </button>
         </div>
-        {filter.map((product) => {
+        {filter.map((plant) => {
           return (
             <>
               <div className="col-md-3 mb-4">
-                <div className="card h-100 text-center p-4" key={product.id}>
+                <div className="card h-100 text-center p-4" key={plant.id}>
                   <img
-                    src={product.image}
+                    src={plant.image}
                     height="250px"
                     className="card-img-top"
-                    alt={product.title}
+                    alt={plant.title}
                   />
                   <div className="card-body">
                     <h5 className="card-title mb-0">
-                      {product.title.substring(0, 12)}...
+                      {plant.title.substring(0, 12)}...
                     </h5>
-                    <p className="card-text lead fw-bold">₹{product.price}</p>
+                    <p className="card-text lead fw-bold">₹{plant.price}</p>
                     <NavLink
-                      to={`/products/${product.id}`}
+                      to={`/plants/${plant._id}`}
                       className="btn  btn-outline-dark"
                     >
                       Buy Now
@@ -119,12 +119,12 @@ export default function Products() {
       <div className="container my-5 py-5">
         <div className="row">
           <div className="col-12 mb-5">
-            <h1 className="display-6 fw-bolder text-center">Latest Products</h1>
+            <h1 className="display-6 fw-bolder text-center">Latest Plants</h1>
             <hr />
           </div>
         </div>
         <div className="row justify-content-center">
-          {loading ? <Loading /> : <ShowProducts />}
+          {loading ? <Loading /> : <ShowPlants />}
         </div>
       </div>
     </>

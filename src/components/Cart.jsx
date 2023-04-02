@@ -1,7 +1,7 @@
 // import React, { useContext } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import CartProduct from "./cart/CartProduct";
+import CartPlant from "./cart/CartPlant";
 
 export default function Cart() {
   const state = useSelector((state) => state.handleCart);
@@ -11,9 +11,9 @@ export default function Cart() {
     <div className="cartContainer container">
       <div className="row">
         <div className="col-md-6">
-          {state?.map((cartProduct) => {
+          {state?.map((cartPlant) => {
             return (
-              <CartProduct cartProduct={cartProduct} dispatch={dispatch} />
+              <CartPlant cartPlant={cartPlant} dispatch={dispatch} />
             );
           })}
           {state.length === 0 && (
@@ -23,7 +23,7 @@ export default function Cart() {
                 Your Cart is Empty...!
               </h1>
               <div className="row text-center">
-                <Link to="./products" className="btn btn-large btn-primary">
+                <Link to="./plants" className="btn btn-large btn-primary">
                   Start Shopping...
                 </Link>
               </div>

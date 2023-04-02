@@ -6,11 +6,11 @@
   height: 550px;
 }
 
-.cartProductContainer{
+.cartPlantContainer{
   border: 1px solid #000;
   margin: 5px;
 }
-.cartProductContainer img{
+.cartPlantContainer img{
   height: 200px;
   width: 200px;
   object-fit: contain;

@@ -1,39 +1,39 @@
 import React from "react";
 import { addCart, delCart, rmvCart } from "../../redux/action";
-export default function CartProduct({ cartProduct, dispatch }) {
+export default function CartPlant({ cartPlant, dispatch }) {
   const handleRemove = () => {
-    dispatch(rmvCart(cartProduct));
+    dispatch(rmvCart(cartPlant));
   };
   const handleReduce = (e) => {
-    if (cartProduct.qty === 0) return;
-    dispatch(delCart(cartProduct));
+    if (cartPlant.qty === 0) return;
+    dispatch(delCart(cartPlant));
   };
   const handleAdd = () => {
-    dispatch(addCart(cartProduct));
+    dispatch(addCart(cartPlant));
   };
 
   return (
-    <div className="cartProductContainer row">
+    <div className="cartPlantContainer row">
       <img
-        src={cartProduct.image}
+        src={cartPlant.image}
         className="img-fluid col-3 p-2"
-        alt={cartProduct.title}
+        alt={cartPlant.title}
       />
-      <div className="cartProductDescription col-7 p-2">
-        <p>{cartProduct.title}</p>
+      <div className="cartPlantDescription col-7 p-2">
+        <p>{cartPlant.title}</p>
         <p>
           Quantity:
           <br />
           <button className="btn btn-light" onClick={handleReduce}>
             -
           </button>
-          <span> {cartProduct.qty}</span>{" "}
+          <span> {cartPlant.qty}</span>{" "}
           <button className="btn btn-light" onClick={handleAdd}>
             +
           </button>
         </p>
-        <p>Item - Price: ₹ {cartProduct.price}</p>
-        <p>Sub - Total: ₹ {cartProduct.sub_total}</p>
+        <p>Item - Price: ₹ {cartPlant.price}</p>
+        <p>Sub - Total: ₹ {cartPlant.sub_total}</p>
       </div>
       <div
         className="col-md-2 d-flex p-2"
