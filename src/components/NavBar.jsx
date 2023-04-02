@@ -8,7 +8,7 @@ export default function NavBar() {
     <nav className="navbar navbar-expand-lg bg-white navbar-light bg-dark py-3 shadow-sm">
       <div className="container">
         <NavLink className="navbar-brand" to="/">
-          Ecommerce
+          Spruce Moose
         </NavLink>
         <button
           class="navbar-toggler"
