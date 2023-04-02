@@ -1,6 +1,6 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export default function NavBar() {
   const state = useSelector((state) => state.handleCart);
@@ -8,10 +8,13 @@ export default function NavBar() {
     <nav className="navbar navbar-expand-lg bg-white navbar-light bg-dark py-3 shadow-sm">
       <div className="container">
         <NavLink className="navbar-brand" to="/">
-          Spruce Moose
+          <img
+            src="../../assets/Spruce-removebg-preview.png"
+            alt="Logo Spruce"
+          />
         </NavLink>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarTogglerDemo01"
@@ -19,7 +22,7 @@ export default function NavBar() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
           <div className="navbar-nav">

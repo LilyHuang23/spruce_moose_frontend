@@ -1,26 +1,35 @@
 /* NAv BAr */
-.navbar-nav a{
+.navbar-brand img {
+  height: 200px;
+  width: 200px;
+  object-fit: contain;
+  background-size: contain;
+}
+.navbar {
+  height: 13vh;
+}
+.navbar-nav a {
   font-size: 18px;
 }
-.carsousel-item img{
+.carsousel-item img {
   height: 550px;
 }
 
-.cartPlantContainer{
+.cartPlantContainer {
   border: 1px solid #000;
   margin: 5px;
 }
-.cartPlantContainer img{
+.cartPlantContainer img {
   height: 200px;
   width: 200px;
   object-fit: contain;
   background-size: contain;
 }
 
-.total{
+.total {
   font-size: 3rem;
 }
-.statusContainer{
+.statusContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,5 +38,11 @@
   position: sticky;
   top: 0;
   height: 300px;
-  
+}
+
+.carousel-inner img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  background-size: cover;
 }
