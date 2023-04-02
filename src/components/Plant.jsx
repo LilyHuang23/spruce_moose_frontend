@@ -62,7 +62,7 @@ export default function Plant() {
             Rating: {plant.rating && plant.rating.rate}
             <i className="fa fa-star"></i>
           </p>
-          <h3 className="display-6 fw-bold my-4">₹ {plant.price}</h3>
+          <h3 className="display-6 fw-bold my-4">$ {plant.price}</h3>
           <p className="lead">{plant.commonName}</p>
           <button
             className="btn btn-outline-dark px-4 py-2"
