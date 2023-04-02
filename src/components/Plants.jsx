@@ -74,9 +74,9 @@ export default function Plants() {
           return (
             <>
               <div className="col-md-3 mb-4">
-                <div className="card h-100 text-center p-4" key={plant.id}>
+                <div className="card h-100 text-center p-4" key={plant._id}>
                   <img
-                    src={plant.image}
+                    src={plant.imgUrl}
                     height="250px"
                     className="card-img-top"
                     alt={plant.commonName}
@@ -85,7 +85,7 @@ export default function Plants() {
                     <h5 className="card-title mb-0">
                       {plant.commonName.substring(0, 12)}...
                     </h5>
-                    <p className="card-text lead fw-bold">₹{plant.price}</p>
+                    <p className="card-text lead fw-bold">${plant.price}</p>
                     <NavLink
                       to={`/plants/${plant._id}`}
                       className="btn  btn-outline-dark"
