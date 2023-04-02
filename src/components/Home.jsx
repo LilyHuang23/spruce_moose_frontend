@@ -31,10 +31,10 @@ export default function Home() {
             <img src="./assets/orchard2.jpg" className="d-block w-100" alt="banner 1" />
           </div>
           <div className="carousel-item">
-            <img src="./assets/orchard3.jpg" className="d-block w-100" alt="banner 2" />
+            <img src="./assets/orchard5.jpg" className="d-block w-100" alt="banner 2" />
           </div>
           <div className="carousel-item">
-            <img src="./assets/orchard4.jpg" className="d-block w-100" alt="banner 3" />
+            <img src="./assets/orchard6.jpg" className="d-block w-100" alt="banner 3" />
           </div>
         </div>
         <button

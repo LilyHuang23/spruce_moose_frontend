@@ -63,11 +63,7 @@ export default function Plant() {
             Size: {plant.size}
             <i className="fa fa-star"></i>
           </p>
-<<<<<<< Updated upstream
           <h3 className="display-6 fw-bold my-4">$ {plant.price}</h3>
-=======
-          <h3 className="display-6 fw-bold my-4">${plant.price}</h3>
->>>>>>> Stashed changes
           <p className="lead">{plant.commonName}</p>
           <button
             className="btn btn-outline-dark px-4 py-2"
