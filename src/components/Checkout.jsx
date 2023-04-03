@@ -1,12 +1,17 @@
 // import React, { useContext } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
+import Login from "./Login";
 import CartPlant from "./cart/CartPlant";
 
-export default function Cart() {
+export default function Checkout() {
   const state = useSelector((state) => state.handleCart);
   const dispatch = useDispatch();
   let total = 0;
+  if (state.loggedIn === false) {
+   return (
+      <Login />
+   )
   return (
     <div className="cartContainer container">
       <div className="row">
@@ -44,3 +49,4 @@ export default function Cart() {
     </div>
   );
 }
+};
