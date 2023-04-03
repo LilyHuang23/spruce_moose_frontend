@@ -15,12 +15,12 @@ export default function CartPlant({ cartPlant, dispatch }) {
   return (
     <div className="cartPlantContainer row">
       <img
-        src={cartPlant.image}
+        src={cartPlant.imgUrl}
         className="img-fluid col-3 p-2"
-        alt={cartPlant.title}
+        alt={cartPlant.commonName}
       />
       <div className="cartPlantDescription col-7 p-2">
-        <p>{cartPlant.title}</p>
+        <p>{cartPlant.commonName}</p>
         <p>
           Quantity:
           <br />
@@ -32,17 +32,17 @@ export default function CartPlant({ cartPlant, dispatch }) {
             +
           </button>
         </p>
-        <p>Item - Price: ₹ {cartPlant.price}</p>
-        <p>Sub - Total: ₹ {cartPlant.sub_total}</p>
+        <p>Item - Price: $ {cartPlant.price}</p>
+        <p>Sub - Total: $ {cartPlant.sub_total}</p>
       </div>
       <div
         className="col-md-2 d-flex p-2"
         style={{ flexDirection: "column", justifyContent: "space-around" }}
       >
-        <button className="btn btn-outline-danger" onClick={handleRemove}>
-          Remove
+        <button className="btn btn-outline-danger" onClick={handleRemove}
+        style={{ width: "9rem"}}>
+          Remove Item 
         </button>
-        {/* <button className="btn btn-light">Buy Now</button> */}
       </div>
     </div>
   );

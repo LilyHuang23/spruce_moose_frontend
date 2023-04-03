@@ -35,7 +35,7 @@ export default function Cart() {
           {state.map((x) => {
             total += x.sub_total;
           })}
-          <div className="total"> ₹ {parseFloat(total).toFixed(2)}</div>
+          <div className="total"> $ {parseFloat(total).toFixed(2)}</div>
         </div>
       </div>
     </div>
