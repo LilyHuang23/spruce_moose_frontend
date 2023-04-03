@@ -5,11 +5,14 @@
   object-fit: contain;
   background-size: contain;
 }
-.navbar {
-  height: 13vh;
-}
+
 .navbar-nav a {
-  font-size: 18px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.nav-link {
+  margin-left: 2rem;
 }
 .carsousel-item img {
   height: 550px;
