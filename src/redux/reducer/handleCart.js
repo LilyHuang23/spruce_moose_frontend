@@ -6,11 +6,11 @@ const handleCart = (state = cart, action) => {
   switch (action.type) {
     case "ADDITEM":
       // Check plant is exists
-      const exist = state.find((x) => x.id === plant.id);
+      const exist = state.find((x) => x._id === plant._id);
       if (exist) {
         // Increase Quantity
         return state.map((x) =>
-          x.id === plant.id ? { ...x, qty: x.qty + 1, sub_total: (x.qty + 1) * x.price } : x
+          x._id === plant._id ? { ...x, qty: x.qty + 1, sub_total: (x.qty + 1) * x.price } : x
         );
       }
 
@@ -24,19 +24,19 @@ const handleCart = (state = cart, action) => {
       ];
 
     case "DELITEM":
-      const exist1 = state.find((x) => x.id === plant.id);
+      const exist1 = state.find((x) => x._id === plant._id);
       if (exist1.qty === 1) {
-        return state.filter((x) => x.id !== exist1.id);
+        return state.filter((x) => x._id !== exist1._id);
       } else {
         return state.map((x) =>
-          x.id === plant.id ? { ...x, qty: x.qty - 1, sub_total: (x.qty - 1) * x.price } : x
+          x._id === plant._id ? { ...x, qty: x.qty - 1, sub_total: (x.qty - 1) * x.price } : x
         );
       }
 
     case "RMVITEM":
-      const exist2 = state.find((x) => x.id === plant.id);
+      const exist2 = state.find((x) => x._id === plant._id);
       if (exist2.qty) {
-        return state.filter((x) => x.id !== exist2.id);
+        return state.filter((x) => x._id !== exist2._id);
       }
 
     default:

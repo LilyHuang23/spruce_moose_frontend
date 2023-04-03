@@ -20,8 +20,9 @@ export default function Plant() {
   useEffect(() => {
     const getPlant = async () => {
       setLoading(true);
-      const response = await fetch(`spruce-moose-backend.onrender.com/plant/${plant._id}`);
-      setPlant(await response.json());
+      const response = await fetch(`https://spruce-moose-backend.onrender.com/plant/${id}`);
+      console.log(await response.body);
+      setPlant(await response.clone().json());
       setLoading(false);
     };
     getPlant();
@@ -60,11 +61,11 @@ export default function Plant() {
           <h1 className="display-5">{plant.commonName}</h1>
           <p className="lead fw-bolder">
             Category: {plant.category}
+            <br />
             Size: {plant.size}
-            <i className="fa fa-star"></i>
           </p>
           <h3 className="display-6 fw-bold my-4">$ {plant.price}</h3>
-          <p className="lead">{plant.commonName}</p>
+          <p className="lead">{plant.description}</p>
           <button
             className="btn btn-outline-dark px-4 py-2"
             onClick={() => {
