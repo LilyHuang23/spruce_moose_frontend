@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
+import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
 export default function Contact() {
+
   return (
     <>
       <div className="container my-5 py-5">
@@ -13,7 +15,13 @@ export default function Contact() {
           </div>
         </div>
         <div className="row justify-content-center">
-          <div className="col-md-6"></div>
+          <div className="col-md-6">
+          <img
+              className="card-img-top"
+              src="../../assets/location.png"
+              alt="Location"
+            />
+          </div>
           <div className="col-md-6">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
