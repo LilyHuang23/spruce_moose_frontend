@@ -13,7 +13,7 @@ export default function About() {
           </div>
         </div>
         <div className="row justify-content-center">
-          <div className="col-md-6">
+          <div className="col-md-6 ">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
               quae, voluptas, quod, voluptates quibusdam voluptatibus quidem `

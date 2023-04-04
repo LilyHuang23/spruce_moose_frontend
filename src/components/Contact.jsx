@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
 export default function Contact() {
-
   return (
     <>
       <div className="container my-5 py-5">
@@ -16,43 +14,25 @@ export default function Contact() {
         </div>
         <div className="row justify-content-center">
           <div className="col-md-6">
-          <img
+            <img
               className="card-img-top"
               src="../../assets/location.png"
               alt="Location"
             />
           </div>
-          <div className="col-md-6">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              quae, voluptas, quod, voluptates quibusdam voluptatibus quidem `
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              quae, voluptas, quod, voluptates quibusdam voluptatibus quidem
-              voluptatum quos quia quas, nesciunt quia quas, nesciunt voluptatum
-              quos quia quas, nesciunt
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              quae, voluptas, quod, voluptates quibusdam voluptatibus quidem `
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              quae, voluptas, quod, voluptates quibusdam voluptatibus quidem
-              voluptatum quos quia quas, nesciunt quia quas, nesciunt voluptatum
-              quos quia quas, nesciunt
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              quae, voluptas, quod, voluptates quibusdam voluptatibus quidem `
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              quae, voluptas, quod, voluptates quibusdam voluptatibus quidem
-              voluptatum quos quia quas, nesciunt quia quas, nesciunt voluptatum
-              quos quia quas, nesciunt
-            </p>
+          <div className="col-md-6 contact-links">
+            <div className="contact-link">
+              <img src="../../assets/email.png" alt="email" />
+              <a href="#">spruce@moose.com</a>
+            </div>
+            <div className="contact-link">
+              <img src="../../assets/phone.png" alt="telephone" />
+              <a href="#">(208) 932 2349</a>
+            </div>
+            <div className="contact-link">
+              <img src="../../assets/locations.png" alt="location" />
+              <a href="#">555 main st, Rexburg, ID 83440</a>
+            </div>
           </div>
         </div>
       </div>

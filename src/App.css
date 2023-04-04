@@ -49,3 +49,16 @@
   object-fit: cover;
   background-size: cover;
 }
+
+.contact-link a {
+  margin: 10px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #000;
+  text-decoration: none;
+}
+.contact-link img {
+  height: 50px;
+  width: 50px;
+  margin: 15px;
+}
