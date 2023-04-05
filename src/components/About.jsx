@@ -45,7 +45,7 @@ export default function About() {
               quos quia quas, nesciunt
             </p>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-4">
             <img
               className="card-img-top"
               src="../../assets/orchard1.jpg"
