@@ -16,7 +16,7 @@ export default function Contact() {
           <div className="col-md-6">
             <img
               className="card-img-top"
-              src="../../assets/location.png"
+              src="/assets/location.png"
               alt="Location"
             />
           </div>
